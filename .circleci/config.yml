@@ -21,18 +21,17 @@ version: 2.1
 #     steps:
 #       - print_pipeline_id: 
 #           to :  ${CIRCLE_WORKFLOW_ID}
-jobs:
-  
-    
+jobs:    
   check-failure:
     docker:
       - image: circleci/node:13.8.0
     steps:
       - run: exit 1
 
-      - run: 
-        command: echo "Handled failure"
-        when: on_fail
+      - run:
+          name: on error
+          command: echo "Hello Error!"
+          when: on_fail
     
 
 workflows:
