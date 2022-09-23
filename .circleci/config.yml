@@ -20,12 +20,12 @@ jobs:
       - image: circleci/node:13.8.0 
     steps:
       - print_pipeline_id: 
-          to : "$CIRCLE_WORKFLOW_ID"
+          to :  ${CIRCLE_WORKFLOW_ID}
       
   
 
 workflows:
   hello_world_output:
     jobs:
-      - save_hello_world_output
+      - hello_world_output
       
